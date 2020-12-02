@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="./fabicon.jpg" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- ========================v플러그인================================================================ -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="./favicon.jpg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   
-    <script>
-      $(document).ready(function(){
-        $('.slider').bxSlider();
+  <!-- =====플러그인===== -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.slider').bxSlider({
+        mode:'fade',
+        slideWidth:360,
+        speed:300,
+        auto:true,
+        pause:2000,
       });
-    </script>
+    });
+  </script>
     
     <title>한솔제지</title>
     <link rel="shortcut icon" href="./favicon.jpg" type="image/x-icon">
@@ -24,6 +30,10 @@
         body{
             margin: 0;
         }
+        #wrap{
+            display:block;
+        }
+        .main_nav{display: none;}
         .clearfix::after{
             content: '';
             display: block;
@@ -45,7 +55,7 @@
              }
          footer{height: 190px;
                 background-color:#f8f8f8;
-         }
+             }
        
          .container{
              width: 360px;
@@ -144,17 +154,18 @@
              color: #3d3d3d;
              margin: 0 auto;
              }
-         .main_slider{
+        .main_slider{
              position: relative;
-             display: none;
+             /* display:none; */
+            }
+            /* #main_slider01{
+              display:block;
+            } */
+        .main_slider>div{
+             position:absolute;
+             left:0;
+             right:0;
              }
-             #main_slider01{
-                 display: block;
-             }
-         .main_slider>div{
-             position: absolute;
-             left: 0;
-             right: 0;}
          .main_tit{top: 140px;}
          .main_txt{top: 351px;}
          .main_btn{bottom: 164px;}
@@ -168,7 +179,7 @@
              left: 38px;
              top: 79px;
              }
-         .sub_slider{
+        .sub_slider{
              height: calc(100% - 114px);
              padding-top: 114px;
              position: relative;
@@ -353,6 +364,16 @@
             font-weight: 500;
             font-size: 14px;
             color: #3d3d3d;
+        }
+        .bx-wrapper{margin: 0 auto;}
+        .bx-controls-direction,.bx-pager.bx-default-pager{
+            display: none;
+        }
+        .bx-wrapper{
+            -moz-box-shadow:none;
+            -webkit-box-shadow:none;
+            box-shadow: none;
+            border: none;
 
         }
     </style> 
@@ -387,10 +408,10 @@
        </header>
          <!-- ==================main banner================================================== -->
        <section id="main_banner">
-        <div class="container">
+        <div class="container slider"> 
             <!-- ================================================================================ -->
                 <div class="main_slider" id="main_slider01">
-                <img src="./images/img_main01.jpg" alt="">
+                <img src="./images/img_main01.jpg" alt="main image">
                 <div class="main_tit">
                     <h3 id="first_title">M ROUGH</h3>
                 </div>
@@ -404,10 +425,11 @@
                 <div class="main_btn">
                     <p>></p>
                 </div>
+                </div>
             <!-- ========================================================================================         -->
 
                  <div class="main_slider">
-                 <img src="./images/img_main02.jpg" alt="">
+                 <img src="./images/img_main02.jpg" alt="main image">
                  <div class="main_tit">
                     <h3>앙상블클래스</h3>
                  </div>
@@ -423,9 +445,10 @@
                     <div class="main_btn">
                         <p>></p>
                     </div>
+                    </div>
             <!-- ======================================================================================  -->
                 <div class="main_slider">
-                    <img src="./images/img_main03.jpg" alt="">
+                    <img src="./images/img_main03.jpg" alt="main image">
                     <div class="main_tit">
                        <h3>Hi-Q AB</h3>
                     </div>
@@ -434,16 +457,17 @@
                         100% 천연 펄프를 사용한 무형광 용지입니다.<br>
                         우수한 인쇄적성과 높은 강도, <br>
                         고급스러운 표면을 가지고 있어<br>
-                        화잗품, 의약품, 고급 포장재, <br>
+                        화장품, 의약품, 고급 포장재, <br>
                         식품 포장재로사용됩니다. 
                        </p>
                        </div>
                        <div class="main_btn">
                            <p>></p>
                        </div>
+                    </div>
              <!-- ======================================================================================================           -->
                  <div class="main_slider">
-                    <img src="./images/img_main04.jpg" alt="">
+                    <img src="./images/img_main04.jpg" alt="main image">
                     <div class="main_tit">
                        <h3>PROTEGO</h3>
                     </div>
@@ -459,9 +483,10 @@
                        <div class="main_btn">
                            <p>></p>
                        </div>
+                    </div>
              <!-- ======================================================================================================           -->
                 <div class="main_slider">
-                 <img src="./images/img_main05.jpg" alt="">
+                 <img src="./images/img_main05.jpg" alt="main image">
                  <div class="main_tit">
                    <h3>한솔감열지</h3>
                  </div>
@@ -476,12 +501,12 @@
                    <div class="main_btn">
                        <p>></p>
                    </div>
-            </div>
-           </div>
+                 </div>  
+         </div>
        </section>
        <!-- =================sub banner===================================================== -->
     <section id="sub_banner">
-        <div class="container">
+        <div class="container slider">
           <!-- ----서브슬라이더1---- -->
           <div class="sub_slider" id="sub_slider01">
             <img src="./images/img_sub_01.jpg" alt="sub image">
@@ -627,5 +652,15 @@
            </div>
        </footer>
    </div> 
+
+   <nav class="main_nav">
+       <ul>
+           <li>1</li>
+           <li>2</li>
+           <li>3</li>
+           <li>4</li>
+           <li>5</li>
+       </ul>
+    </nav>
 </body>
 </html>
