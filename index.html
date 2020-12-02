@@ -21,6 +21,14 @@
     <title>한솔제지</title>
     <link rel="shortcut icon" href="./favicon.jpg" type="image/x-icon">
     <style>
+        body{
+            margin: 0;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
          
          header{height: 52px;}
          #main_banner{
@@ -32,10 +40,12 @@
              margin-bottom: 71px;
              }
          #content_box{
-             height: 389px;
+             
              margin-bottom: 72px;
              }
-         footer{height: 190px}
+         footer{height: 190px;
+                background-color:#f8f8f8;
+         }
        
          .container{
              width: 360px;
@@ -272,7 +282,78 @@
             color: #9d9d9d;
         }
         #first_con_box{
-            margin-bottom: 53px;
+            margin-bottom: 38px;
+        }
+        footer>.container{
+            width: 332px;
+            height: 130px
+            padding:30px 14px ;
+        }
+        #footer_logo{
+             float: left;
+        } 
+        #footer_logo_top{
+            width: 78px;
+        }
+        #footer_points{
+            float: left;
+        }  
+        #footer_points::before,#footer_points::after{
+            content: '';
+            display: block;
+            width: 5px;
+            height: 5px;
+            background-color: #9d9d9d;
+        }
+        #footer_points::before{margin-bottom: 5px;}
+        #footer_logo_txt{
+            float: right;
+            margin-top: -8px;
+            font-family: 'Noto Sans KR';
+            font-weight: 800;
+            font-size: 20px;
+            color: #9d9d9d;
+        }
+        #footer_logo_bottom{
+            font-family: 'Noto Sans KR';
+            font-weight: 500;
+            font-size: 9px;
+            color: #9d9d9d;
+            text-align: right;
+            margin-right: 8px;
+            position: relative;
+        }
+        #footer_logo_bottom>span{
+            position: absolute;
+            right: 0;
+            bottom: -10px;
+
+        }
+        #info_pro{float: right;
+                  font-family: 'Noto Sans KR';  
+                  font-weight: 500;
+                  font-size: 14px;
+                  color: #111111;
+        }
+        #info_pro>p{margin-top: 5px;}
+        address{
+            font-family: 'Noto Sans KR';
+            font-weight: 500;
+            font-size:12px ;
+            line-height: 18px;
+            color: #9d9d9d;
+            font-style: normal;
+        }
+        #family_site{margin:10px 10px;}
+        #family_site>select{
+            width: 100%;
+            border: 1px solid #3d3d3d;
+            padding: 6px 9px;
+            font-family: 'Noto Sans KR';
+            font-weight: 500;
+            font-size: 14px;
+            color: #3d3d3d;
+
         }
     </style> 
 
@@ -399,7 +480,6 @@
            </div>
        </section>
        <!-- =================sub banner===================================================== -->
-       <!-- =========SUB_BANNER========== -->
     <section id="sub_banner">
         <div class="container">
           <!-- ----서브슬라이더1---- -->
@@ -473,7 +553,7 @@
           </div>
         </div>
       </section>
-       <!-- ================contet box====================================================== -->
+       <!-- ================content box====================================================== -->
        <section id="content_box">
            <div class="container">
                <div id="content_box_tit">
@@ -487,8 +567,8 @@
                </div>
                
                <div class="con_box_txt">
-                한솔제지는 환경 변화와 고객 니즈를 반영한 제품 포트폴리오<br>
-                강화를 통해 선진 제지기업으로서 최고의 제품을 위해 노력하고있습니다.   
+                <p>한솔제지는 환경 변화와 고객 니즈를 반영한 제품 포트폴리오<br>
+                강화를 통해 선진 제지기업으로서 최고의 제품을 위해 노력하고있습니다. </p>  
                </div>
             </div>
                <!-- =================================================================== -->
@@ -498,13 +578,54 @@
             </div>
             
             <div class="con_box_txt">
-                구매관리, 운송정보, 납품실적관리를 쉽고 편리하게 확인하실 수  있습니다.   
+                <p>구매관리, 운송정보, 납품실적관리를 쉽고 편리하게 확인하실 수  있습니다.</p>   
             </div></div>
 
            </div>
        </section>
        <!-- ===============footer================================================================ -->
-       <footer></footer>
+       <footer>
+           <div class="container">
+            <div id="footer_top" class='clearfix';>
+                <div id="footer_logo">
+                    <div id="logo">
+                        <div id="footer_logo_top" class="clearfix">
+                        <span id="footer_points">
+                        </span>
+                        <span id="footer_logo_txt">
+                            Hansol
+                        </span>
+                        </div>
+                        <div id="footer_logo_bottom">
+                       <span> 한솔제지</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="info_pro">
+                    <p>개인정보처리방침</p>
+                </div>
+            </div>
+            <div id="family_site">
+                <select>
+                    <option>Family Site</option>
+                    <option>한솔그룹</option>
+                    <option>한솔PNS</option>
+                    <option>한솔홈데코</option>
+                    <option>한솔테크닉스</option>
+                
+
+                </select>
+            </div>
+            <div id="copyright">
+                <address>
+                    서울 중구 을지로 100(을지로2가) 파인에비뉴 B동 23~24층<br>
+                    Copyright 2020 Hansol., All right Reserved
+
+                </address>
+
+            </div>
+           </div>
+       </footer>
    </div> 
 </body>
 </html>
