@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내가만든 워드패드</title>
+  <script src="./js/jquery-3.5.1.js"></script>
+  <script>
+    $(function(){
+      let copyWord;
+      // 복사하기
+      function copy(){
+        copyWord = $('#word_pad').val();        
+      }
+      // 잘라내기
+      function cut(){
+        copyWord = $('#word_pad').val();
+        $('#word_pad').val('');
+      }
+      // 붙여넣기
+      function paste(){
+        $('#word_pad2').val(copyWord);
+      }
+
+      $('#word_copy').click(copy);
+      $('#word_cut').click(cut);
+      $('#word_paste').click(paste);
+
+      $(document).keydown(function(event){
+        if(event.ctrlKey && event.altKey && event.shiftKey && event.keyCode == 67){//Ctrl alt shift c 복사하기 단축키
+          copy();
+        }
+        if(event.ctrlKey && event.altKey && event.shiftKey && event.keyCode == 67){//Ctrl alt shift x 복사하기 단축키
+          cut();
+        }
+        if(event.ctrlKey && event.altKey && event.shiftKey && event.keyCode == 67){//Ctrl alt shift v 복사하기 단축키
+          paste();
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="btns">
+      <button id="word_copy">복사</button><button id="word_cut">잘라내기</button><button id="word_paste">붙여넣기</button>
+    </div>
+    <div class="input_word">
+      <textarea id="word_pad" cols="150" rows="15"></textarea>
+      <textarea id="word_pad2" cols="150" rows="15"></textarea>
+    </div>
+  </div>
+</body>
+</html>
